@@ -5,6 +5,7 @@ import Table from "@/components/Table";
 import Link from "next/link";
 import { role, studentsData } from "@/lib/data";
 
+import FormModal from "@/components/FormModal";
 
 
 
@@ -82,6 +83,11 @@ const StudentListPage = () => {
                   <Image src="/view.png" alt="" width={16} height={16} />
                 </button>
               </Link>
+              {role === "admin" && (
+              //<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                //<Image src="/plus.png" alt="" width={14} height={14} />
+              //</button>
+              <FormModal table="teacher" type="delete" id={item.id}/>)} 
             </div>
           </td>
         </tr>
@@ -100,9 +106,11 @@ const StudentListPage = () => {
               <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
                 <Image src="/sort.png" alt="" width={14} height={14} />
               </button>
-              {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-                <Image src="/plus.png" alt="" width={14} height={14} />
-              </button>)}
+              {role === "admin" && (
+              //<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                //<Image src="/plus.png" alt="" width={14} height={14} />
+              //</button>
+              <FormModal table="teacher" type="create"/>)} 
             </div>
           </div>
         </div>
